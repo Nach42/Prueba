@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Jquery</title>
+</head>
+<body>
+	<img id="potato" src="img/potato.png" width="400" height="450">
+	<button id="btn1">Mostrar</button>
+	<button id="btn2">Ocultar</button>
+	<button id="btn3">Agrandar</button>
+	<button id="btn4">Disminuir</button>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$('#btn1').click(function(){
+				$('#potato').fadeIn(3000);
+			});
+			$('#btn2').click(function(){
+				$('#potato').fadeOut(3000);
+			});
+			$('#btn3').click(function(){
+				$('#potato').animate({height:'900', width:'900'});
+			});
+			$('#btn4').click(function(){
+				$('#potato').animate({height:'450', width:'400'});
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Jquery</title>
+</head>
+<body>
+	<center>
+		<h1><i class="fa fa-volume-up" id="icon"></i></h1>
+	</center>
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="https://use.fontawesome.com/e622d3b53e.js"></script>
+	<script>
+		$(function(){
+			$('#icon').mousedown(function(){
+				if($('#icon').hasClass('fa-volume-up')){
+					$('#icon').addClass('fa-volume-off').removeClass('fa-volume-up');
+				}else{
+					$('#icon').addClass('fa-volume-up').removeClass('fa-volume-off');
+				}
+			});
+			$('#icon').mouseover(function(){
+				$('#icon').addClass('fa-volume-off').removeClass('fa-volume-up');
+			});
+			$('#icon').mouseleave(function(){
+				$('#icon').addClass('fa-volume-up').removeClass('fa-volume-off');
+			});
+		});
+	</script>
+</body>
+</html>

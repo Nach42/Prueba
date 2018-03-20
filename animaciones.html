@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Jquery</title>
+</head>
+<body>
+	<style>
+		.cubo{
+			position: absolute;
+			background-color: black;
+			width: 50px;
+			height: 50px;
+			margin-top: 5%;
+			color: red;
+		}
+	</style>
+
+	<center>
+	<button id="left" class="fa fa-backward"></button>
+	<button id="right" class="fa fa-forward"></button>
+	<button id="up" class="fa fa-caret-up"></button>
+	<button id="down" class="fa fa-caret-down"></button> <br><br>
+	<button id="disminuir">disminuir</button>
+	<div class="cubo">hola</div><br><br>
+	</center>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="https://use.fontawesome.com/e622d3b53e.js"></script>
+
+	<script>
+		$(function(){
+			$('body').keyup(function(event){
+				if(event.keyCode == 37){
+					$('.cubo').animate({'left':'-=50px'}, 'slow');
+				}else if(event.keyCode == 39){
+					$('.cubo').animate({'left':'+=50px'}, 'fast');
+				}else if(event.keyCode == 38){
+					$('.cubo').animate({'top':'-=50px'});
+				}else if(event.keyCode == 40){
+					$('.cubo').animate({'top':'+=50px'});
+				}				
+			});
+
+			$('.cubo').click(function(){
+				$(this).animate({
+					height: ['+=50', 'easeOutBounce'],
+					width: ['+=50', 'easeOutBounce']
+				});
+			});
+			$('#disminuir').click(function(){
+				$('.cubo').animate({
+					height: ['-=50', 'easeOutBounce'],
+					width: ['-=50', 'easeOutBounce']
+				});
+			});
+
+			$('#left').click(function(){
+				$('.cubo').animate({'left':'-=50px'});
+			});
+			$('#right').click(function(){
+				$('.cubo').animate({'left':'+=50px'});
+			});
+			$('#up').click(function(){
+				$('.cubo').animate({'top':'-=50px'});
+			});
+			$('#down').click(function(){
+				$('.cubo').animate({'top':'+=50px'});
+			});
+		});
+	</script>
+</body>
+</html>
