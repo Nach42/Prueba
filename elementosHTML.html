@@ -20,13 +20,15 @@
 	<button id="rotar2">Rotar elementos hacia abajo</button>
 	<button id="delete"><i class="fas fa-trash-alt"></i></button>
 </center>
+<div id="accion"></div>
 
 <script>
 	$(function(){
-
+		selector();
 		$('#add').click(function(){
 			var size = $('li').length;
 			$('ol').append('<li>Elemento '+(size+1)+'</li>');
+			selector();
 		});
 		$('#rotar1').click(function(){
 			$('ol').append($('ol li:first')); //pone el primer elemento de la lista en la ultima posicion
@@ -37,12 +39,18 @@
 		$('#delete').click(function(){
 			$('ol li:last').remove();
 		});
-		$('ol').mouseover(function(){
-			$('ol').css({background : 'red'});
-		});
-		$('ol').mouseleave(function(){
-			$('ol').css({background : 'white'});
-		});
+	
+		function selector(){
+			$('li').mouseover(function(){
+				$(this).css({background : 'red'});
+			});
+			$('li').mouseleave(function(){
+				$(this).css({background : 'white'});
+			});
+			$('li').mouseover(function(){
+				$('#accion').html($(this).text()+" seleccionado");
+			});
+		}
 	});
 </script>
 </body>
