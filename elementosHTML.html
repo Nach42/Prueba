@@ -27,7 +27,7 @@
 	<button id="rotar2">Rotar elementos hacia abajo</button>
 	<button id="delete"><i class="fas fa-trash-alt"></i></button><br>
 </center>
-<div id="accion" style="padding-left: 20px"></div>
+<div id="accion" style="padding-left: 20px">Selexiona argo</div>
 <center>
 	<ol>
 		<li>Elemento 1 </li>
@@ -58,12 +58,11 @@
 		function selector(){
 			$('li').mouseover(function(){
 				$(this).addClass('over');
+				$('#accion').html($(this).text()+" seleccionado");
 			});
 			$('li').mouseleave(function(){
 				$(this).removeClass('over');
-			});
-			$('li').mouseover(function(){
-				$('#accion').html($(this).text()+" seleccionado");
+				$('#accion').html("Selexiona argo cohone");
 			});
 		}
 	});
