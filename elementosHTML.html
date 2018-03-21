@@ -13,6 +13,10 @@
 			background: #bfbfbf;
 			border: 1px outset;
 		}
+		.over{
+			background : #e6e6e6;
+			font-weight: bold;
+		}
 	</style>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -53,10 +57,10 @@
 	
 		function selector(){
 			$('li').mouseover(function(){
-				$(this).css({'background' : '#e6e6e6', 'font-weight': 'bold'});
+				$(this).addClass('over');
 			});
 			$('li').mouseleave(function(){
-				$(this).css({'background' : '#bfbfbf', 'font-weight': 'normal'});
+				$(this).removeClass('over');
 			});
 			$('li').mouseover(function(){
 				$('#accion').html($(this).text()+" seleccionado");
