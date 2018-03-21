@@ -5,22 +5,33 @@
 	<title>HTML</title>
 </head>
 <body>
+	<style>
+		button{
+			border: 2px solid #808080;
+		}
+		li{
+			background: #bfbfbf;
+			border: 1px outset;
+		}
+	</style>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 <center>
 	<h1>Crear, copiar, mover y borrar</h1>
+	<button id="add">Añadir Elemento</button>
+	<button id="rotar1">Rotar elementos hacia arriba</button>
+	<button id="rotar2">Rotar elementos hacia abajo</button>
+	<button id="delete"><i class="fas fa-trash-alt"></i></button><br>
+</center>
+<div id="accion" style="padding-left: 20px"></div>
+<center>
 	<ol>
 		<li>Elemento 1 </li>
 		<li>Elemento 2 </li>
 		<li>Elemento 3 </li>
 		<li>Elemento 4 </li>
 	</ol>
-	<button id="add">Añadir Elemento</button>
-	<button id="rotar1">Rotar elementos hacia arriba</button>
-	<button id="rotar2">Rotar elementos hacia abajo</button>
-	<button id="delete"><i class="fas fa-trash-alt"></i></button>
-</center><br>
-<div id="accion"></div>
+</center>
 
 <script>
 	$(function(){
@@ -42,10 +53,10 @@
 	
 		function selector(){
 			$('li').mouseover(function(){
-				$(this).css({background : 'red'});
+				$(this).css({'background' : '#e6e6e6', 'font-weight': 'bold'});
 			});
 			$('li').mouseleave(function(){
-				$(this).css({background : 'white'});
+				$(this).css({'background' : '#bfbfbf', 'font-weight': 'normal'});
 			});
 			$('li').mouseover(function(){
 				$('#accion').html($(this).text()+" seleccionado");
