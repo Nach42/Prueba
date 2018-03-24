@@ -15,7 +15,7 @@
 			border: 1px outset;
 		}
 		.close{
-			position: top;
+			float: right;
 		}
 		.over{
 			background : #e6e6e6;
@@ -25,6 +25,7 @@
 	</style>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
 <center>
 	<h1>Crear, copiar, mover y borrar</h1>
 	<button id="add">Añadir Elemento</button>
@@ -33,10 +34,13 @@
 	<button id="delete"><i class="fas fa-trash-alt"></i></button><br>
 </center>
 <div id="selector" style="padding-left: 20px">Selexiona argo</div>
+<button id="close" class="close" hidden="true"><i class="fas fa-times"></i></button>
+
 <center>
-	<div id="accion">
-		<img id="img" src=""></i>
+	<div id="accion">	
+		<img id="img" src=""></img>
 	</div>
+
 	<ol>
 		<li>Elemento 1 </li>
 		<li>Elemento 2 </li>
@@ -74,11 +78,8 @@
 				$('#selector').html("Selexiona argo cohone");
 			});
 			$('li').click(function(){
-				var i = $('<i>', {class: 'fas fa-times close'});
 				$("#img").attr("src", "img/coca.png");
-
-				var boton = $('<button>', {id: 'close'}).append(i);
-				$("#accion").append(boton);
+				$("#close").attr("hidden", false);
 				$("#close").click(function(){
 					$("#img").attr("src", "");
 					$("#close").remove();
